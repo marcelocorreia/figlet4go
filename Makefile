@@ -9,10 +9,11 @@ wrap-up:
 	go mod vendor
 
 
-snapshot:
-	-mkdir -p dist coverage
-	goreleaser  release --snapshot  --rm-dist --debug
 
+
+snapshot:
+	@$(info - Releasing $(PROJECT_NAME)-snapshot)
+	@goreleaser release --snapshot --skip-publish --rm-dist
 
 release-zero: ;$(info Creating initial release)
 	@git tag 0.0.0
@@ -24,6 +25,8 @@ release: _setup-versions
 	@git push
 	@git tag $(NEXT_VERSION)
 	@git push $(GIT_REMOTE) --tags
+	@$(info - Releasing...)
+	@goreleaser release --rm-dist
 
 
 all-versions:
