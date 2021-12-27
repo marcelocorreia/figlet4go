@@ -20,7 +20,7 @@ release-zero: ;$(info Creating initial release)
 	@git tag 0.0.0
 	@git push $(GIT_REMOTE) --tags
 
-_tag-push:
+_tag-push: _setup-versions
 	-git add .
 	-git commit -m "Release: $(NEXT_VERSION)"
 	-git tag $(NEXT_VERSION)
