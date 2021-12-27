@@ -19,6 +19,8 @@ const extension string = "flf"
 var defaultFonts []string = []string{
 	"standard",
 	"larry3d",
+	"banner",
+	"caligraphy",
 }
 
 // Holds the available fonts
