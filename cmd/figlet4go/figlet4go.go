@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/mbndr/figlet4go"
+	"github.com/marcelocorreia/figlet4go"
 	"log"
 	"os"
 	"strings"
