@@ -28,7 +28,6 @@ release: _setup-versions
 	@$(info - Releasing...)
 	@goreleaser release --rm-dist
 
-
 all-versions:
 	@git ls-remote --tags $(GIT_REMOTE)
 
