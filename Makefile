@@ -1,7 +1,7 @@
 GITHUB_USER ?= marcelocorreia
 GIT_REPO_NAME ?= figlet4go
 SEMVER_BIN ?= semver
-RELEASE_TYPE ?= patch
+RELEASE_TYPE ?= minor
 
 
 wrap-up:
