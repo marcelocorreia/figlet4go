@@ -13,21 +13,19 @@ snapshot:
 	-mkdir -p dist coverage
 	goreleaser  release --snapshot  --rm-dist --debug
 
-release: _setup-versions _tag-push
-	goreleaser release  --rm-dist
 
 release-zero: ;$(info Creating initial release)
 	@git tag 0.0.0
 	@git push $(GIT_REMOTE) --tags
 
-_tag-push: _setup-versions
-	-git add .
-	-git commit -m "Release: $(NEXT_VERSION)"
-	-git tag $(NEXT_VERSION)
-	-git tag go/v$(NEXT_VERSION)
-	-git tag v$(NEXT_VERSION)
-	-git push
-	-git push --tags
+release: _setup-versions
+	@git add .
+	@git commit -m "release"
+	@git push
+	@git tag $(NEXT_VERSION)
+	@git push $(GIT_REMOTE) --tags
+
+
 
 all-versions:
 	@git ls-remote --tags $(GIT_REMOTE)
