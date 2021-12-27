@@ -25,6 +25,7 @@ release: _setup-versions
 	@git tag $(NEXT_VERSION)
 	@git push $(GIT_REMOTE) --tags
 
+
 all-versions:
 	@git ls-remote --tags $(GIT_REMOTE)
 
